@@ -263,7 +263,10 @@ ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 function draw () {
     requestAnimationFrame(draw);
-    step();
+    let start = performance.now();
+    while (performance.now() - start < 1000/30) {
+        step();
+    }
 };
 draw();
 
